@@ -1,5 +1,9 @@
 import turtle 
-import tkinter 
+import tkinter
+import random
+
+x = 0
+y = 0
 
 def menuScreen():
     window = tkinter.Tk()
@@ -50,6 +54,21 @@ def mainGame() :
     wn.bgcolor ("grey")
     wn.setup (width=800, height= 800)
 
+    loop = 0
+     
+    def move(x,y):
+        x = random.randint (-500, 500)
+        y = random.randint (-500, 500)
+        dot.sety(y)
+        dot.setx(x)
+
+    dot = turtle.Turtle()
+    dot.speed(0)
+    dot.shape("circle")
+    dot.color("black")
+    dot.penup()
+    while loop == 0:
+        dot.onclick(move)
 
     wn.mainloop()
 
